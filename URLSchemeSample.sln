@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLSchemeSample.Lib", "URLS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLSchemeSample.Wpf", "URLSchemeSample.Wpf\URLSchemeSample.Wpf.csproj", "{A3763B22-1061-42E5-8D1F-5974540FB73E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLSchemeSample.Mac", "URLSchemeSample.Mac\URLSchemeSample.Mac.csproj", "{78CC667B-474F-4594-BDD3-585A009479D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A3763B22-1061-42E5-8D1F-5974540FB73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3763B22-1061-42E5-8D1F-5974540FB73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3763B22-1061-42E5-8D1F-5974540FB73E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CC667B-474F-4594-BDD3-585A009479D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CC667B-474F-4594-BDD3-585A009479D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CC667B-474F-4594-BDD3-585A009479D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CC667B-474F-4594-BDD3-585A009479D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
