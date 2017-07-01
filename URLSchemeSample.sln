@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLSchemeSample.Lib", "URLSchemeSample.Lib\URLSchemeSample.Lib.csproj", "{BD4D7568-8C07-42BE-AC8B-4713C28D9FAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLSchemeSample.Wpf", "URLSchemeSample.Wpf\URLSchemeSample.Wpf.csproj", "{A3763B22-1061-42E5-8D1F-5974540FB73E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD4D7568-8C07-42BE-AC8B-4713C28D9FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4D7568-8C07-42BE-AC8B-4713C28D9FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4D7568-8C07-42BE-AC8B-4713C28D9FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4D7568-8C07-42BE-AC8B-4713C28D9FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3763B22-1061-42E5-8D1F-5974540FB73E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3763B22-1061-42E5-8D1F-5974540FB73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3763B22-1061-42E5-8D1F-5974540FB73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3763B22-1061-42E5-8D1F-5974540FB73E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
