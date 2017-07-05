@@ -50,8 +50,9 @@ namespace URLSchemeSample.Wpf
         {
             try
             {
-                var protocolName = "sample-app";
-                var mainKey = Registry.ClassesRoot.CreateSubKey(protocolName);
+                var protocolName = "sample-app2";
+                //var mainKey = Registry.ClassesRoot.CreateSubKey(protocolName);
+                var mainKey = Registry.CurrentUser.CreateSubKey($"Software\\Classes\\{protocolName}");
                 mainKey.SetValue("", $"URL:{protocolName} Protocol");
                 mainKey.SetValue("URL Protocol", "");
 
@@ -64,7 +65,7 @@ namespace URLSchemeSample.Wpf
                 var commandKey = openKey.CreateSubKey("command");
                 commandKey.SetValue("", $"\"{AppPath}\" \"%1\" \"%2\" \"%3\" \"%4\" \"%5\" \"%6\"");
 
-                MessageBox.Show("URLスキームを登録しました\n\nコマンドから以下を実行してください\nstart sample-app://Hello1 Hello2 Hello3");
+                MessageBox.Show($"URLスキーム(CurrentUser)を登録しました\n\nコマンドから以下を実行してください\nstart {protocolName}://Hello1 Hello2 Hello3");
             }
             catch (UnauthorizedAccessException ex)
             {
