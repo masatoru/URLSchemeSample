@@ -11,7 +11,7 @@ Sample of URL Scheme for Xamarin.Mac and WPF
 
 - implements URL Scheme for WPF <b>*** done ***</b>
 
-    Run WPF Application and this command from command prompt
+    Run WPF Application <b>as administrator</b> and this command from command prompt
     ```
     start sample-app://Hello1 Hello2 Hello3
     ```
