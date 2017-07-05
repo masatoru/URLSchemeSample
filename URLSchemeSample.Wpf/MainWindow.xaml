@@ -6,8 +6,5 @@
         xmlns:local="clr-namespace:URLSchemeSample.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Button Content="Regist URL Scheme" HorizontalAlignment="Left" Margin="24,24,0,0" VerticalAlignment="Top" Width="466"/>
-
-    </Grid>
+    <Grid/>
 </Window>
