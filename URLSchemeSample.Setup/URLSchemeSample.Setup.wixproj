@@ -6,7 +6,7 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>0cae9199-121a-49e2-8773-6480dc4fe1a5</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>URLSchemeSample</OutputName>
+    <OutputName>URLSchemeSample.Setup</OutputName>
     <OutputType>Package</OutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
