@@ -5,31 +5,25 @@
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate EmbedCab="yes" />
-
+    
     <Feature Id="ProductFeature" Title="URLSchemeSample.Setup" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>
+
+    <InstallExecuteSequence>
+      <!--RemoveExistingProducts Before="InstallInitialize" /--> 
+      <Custom Action="LaunchApplication" After='InstallFinalize'/>
+    </InstallExecuteSequence>
+
   </Product>
 
+  <!-- Step 3: Include the custom action -->
+  <Fragment>
+    <CustomAction Id="LaunchApplication" Execute="immediate" Directory="INSTALLFOLDER" ExeCommand="[INSTALLFOLDER]$(var.URLSchemeSample.Wpf.TargetFileName)"
+                  Impersonate="yes"
+                  Return="asyncNoWait"/>
+  </Fragment>
 
-<!--
-  <Fragment>
-    <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="DesktopFolder" SourceName="Desktop">
-        <Directory Id="INSTALLFOLDER" Name="URLSchemeSample" />
-      </Directory>
-    </Directory>
-  </Fragment>
-  <Fragment>
-    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-      <Component Id="MainExecutable" Guid="*">
-        <File Id="MainExecutable" Source="$(var.URLSchemeSample.Wpf.TargetPath)" KeyPath="yes" Checksum="yes">
-        </File>
-      </Component>
-    </ComponentGroup>
-  </Fragment>
--->  
-  
   <!-- http://wixtoolset.org/documentation/manual/v3/votive/votive_project_references.html -->
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
@@ -39,6 +33,7 @@
       </Directory>
     </Directory>
   </Fragment>
+
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="MainExecutable" Guid="*">
@@ -50,13 +45,37 @@
             Description="URLSchemeSample desktop application"
             WorkingDirectory="INSTALLFOLDER"
             IconIndex="0"
-            Advertise="yes"  / -->
+            Advertise="yes"  /-->
         </File>
       </Component>
     </ComponentGroup>
   </Fragment>
 
+  <!-- 以下未使用 -->
+
+  <Fragment>
+    <UI>
+      <UIRef Id='WixUI_Minimal'/>
+      <Publish Dialog="ExitDialog" Control="Finish" Order="1" Event="DoAction" Value="LaunchApplication">LAUNCH_APP_ON_EXIT</Publish>
+    </UI>
+  </Fragment>
+
   <Fragment>
     <Icon Id="MyAppIcon" SourceFile="$(var.URLSchemeSample.Wpf.TargetPath)" />
   </Fragment>
+
+  <Fragment>
+    <InstallExecuteSequence>
+      <Custom Action='ChangeDir' After='CostFinalize' >NOT Installed</Custom>
+    </InstallExecuteSequence>
+  </Fragment>
+
+  <Fragment>
+    <UI>
+      <Publish Dialog="ExitDialog" Control="Finish" Order="1" Event="DoAction" Value="StartAppOnExit">WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT</Publish>
+    </UI>
+  </Fragment>
+
+
+
 </Wix>
